@@ -5,6 +5,19 @@ const btnAgregar = document.querySelector('button');
 
 const listaNotas = document.getElementById('listaNotas');
 
- console.log('Referencia del input:', inputNota);
-console.log('Referencia del botón:', btnAgregar);
-console.log('Referencia de la lista <ul>:', listaNotas);
+btnAgregar.addEventListener('click', function() {
+    if (inputNota.value === ''){
+        alert('Esta vacío, ingresa una nota por favor');
+    }else{
+        const notaNueva=document.createElement('li');
+        notaNueva.textContent=inputNota.value;
+
+        const btnEliminar=document.createElement('button');
+        btnEliminar.textContent='eliminar';
+        notaNueva.appendChild(btnEliminar);
+        listaNotas.appendChild(notaNueva);
+        inputNota.value='';
+        inputNota.focus();
+        console.log(`se agrego ${notaNueva.textContent}`);
+    }
+});
