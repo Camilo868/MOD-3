@@ -19,5 +19,9 @@ btnAgregar.addEventListener('click', function() {
         inputNota.value='';
         inputNota.focus();
         console.log(`se agrego ${notaNueva.textContent}`);
+        btnEliminar.addEventListener('click', function(){
+            listaNotas.removeChild(notaNueva);
+            console.log(`se eliminó ${notaNueva.textContent}`);
+        })
     }
 });
